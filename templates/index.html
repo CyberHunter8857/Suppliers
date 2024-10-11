@@ -1,21 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Customizer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center">Assignment Customizer</h1>
-        <form action="/generate" method="POST" class="mt-4">
-            <div class="mb-3">
-                <label for="studentName" class="form-label">Enter Your Name:</label>
-                <input type="text" class="form-control" id="studentName" name="student_name" placeholder="Your Name" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Download Assignment</button>
-        </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Downloader</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: hsla(205, 46%, 10%, 1);
+
+        background: linear-gradient(
+          90deg,
+          hsla(205, 46%, 10%, 1) 0%,
+          hsla(191, 28%, 23%, 1) 50%,
+          hsla(207, 41%, 27%, 1) 100%
+        );
+
+        background: -moz-linear-gradient(
+          90deg,
+          hsla(205, 46%, 10%, 1) 0%,
+          hsla(191, 28%, 23%, 1) 50%,
+          hsla(207, 41%, 27%, 1) 100%
+        );
+
+        background: -webkit-linear-gradient(
+          90deg,
+          hsla(205, 46%, 10%, 1) 0%,
+          hsla(191, 28%, 23%, 1) 50%,
+          hsla(207, 41%, 27%, 1) 100%
+        );
+
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#0E1C26", endColorstr="#2A454B", GradientType=1 );
+        color: #f0f0f0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+      .glass-container {
+        max-width: 515px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .form-label {
+        color: #f0f0f0;
+      }
+      .form-control {
+        background-color: rgb(120 120 120 / 20%);
+        border: none;
+        color: white;
+      }
+      .form-control:focus {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        box-shadow: none;
+      }
+      .btn-primary {
+        margin-top: 15px;
+        background-color: #007bff;
+        border: none;
+      }
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }
+      @media screen and (max-width: 560px) {
+        .glass-container{
+            width: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glass-container">
+      <h2 class="text-center"><b>Assignment Downloader</b></h2>
+      <h3 class="text-center">
+        Fundamental of JAVA Programming Lab Assignment.
+      </h3>
+      <form action="/generate" method="POST" class="mt-4">
+        <div class="mb-3">
+          <label for="studentName" class="form-label">Enter Your Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="studentName"
+            name="student_name"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="className" class="form-label">Enter Your Class:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="className"
+            name="class_name"
+            placeholder="Division A/B"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="rollNumber" class="form-label"
+            >Enter Your Roll Number:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="rollNumber"
+            name="roll_number"
+            placeholder="for ex.340201"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+          Download Assignment
+        </button>
+      </form>
     </div>
-</body>
+  </body>
 </html>
