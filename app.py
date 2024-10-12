@@ -53,6 +53,3 @@ def generate():
         download_name=f"assignment_{student_name}.docx",
         mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     )
-
-if __name__ == '__main__':
-    app.run(debug=True)
