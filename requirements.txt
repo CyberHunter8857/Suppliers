@@ -2,3 +2,4 @@ Gunicorn
 Flask==2.2.5
 Werkzeug==2.2.3
 python-docx==0.8.11
+pymongo==4.10.1
