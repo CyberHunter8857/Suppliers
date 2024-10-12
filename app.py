@@ -7,7 +7,7 @@ import datetime
 app = Flask(__name__)
 
 # Replace with your MongoDB Atlas connection string
-client = MongoClient("mongodb+srv://mayurtamanke:mayur123#@cyberhunterdb.dr09i.mongodb.net/?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://mayurtamanke:mayur123#@cyberhunterdb.dr09i.mongodb.net/?retryWrites=true&w=majority&tls=true")
 db = client['assignment_db']  # Database name
 collection = db['downloads']  # Collection name
 
