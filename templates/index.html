@@ -80,51 +80,57 @@
     </style>
   </head>
   <body>
-    <div class="glass-container">
-      <h2 class="text-center"><b>Assignment Downloader</b></h2>
-      <h3 class="text-center">
-        Fundamental of JAVA Programming Lab Assignment.
-      </h3>
-      <form action="/generate" method="POST" class="mt-4">
+    <!-- Inside <body> tag -->
+<div class="glass-container">
+    <h2 class="text-center"><b>Assignment Downloader</b></h2>
+    <h3 class="text-center">Advance JAVA Programming Lab Assignment</h3>
+  
+    <form id="assignmentForm" class="mt-4">
         <div class="mb-3">
-          <label for="studentName" class="form-label">Enter Your Name:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="studentName"
-            name="student_name"
-            placeholder="Your Name"
-            required
-          />
+          <label class="form-label">Enter Your Name:</label>
+          <input type="text" class="form-control" name="student_name" placeholder="Your Name" required />
         </div>
         <div class="mb-3">
-          <label for="className" class="form-label">Enter Your Class:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="className"
-            name="class_name"
-            placeholder="Division A/B"
-            required
-          />
+          <label class="form-label">Enter Your Class:</label>
+          <input type="text" class="form-control" name="class_name" placeholder="Division A/B" required />
         </div>
         <div class="mb-3">
-          <label for="rollNumber" class="form-label"
-            >Enter Your Roll Number:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="rollNumber"
-            name="roll_number"
-            placeholder="for ex.340201"
-            required
-          />
+          <label class="form-label">Enter Your Roll Number:</label>
+          <input type="text" class="form-control" name="roll_number" placeholder="e.g. 340201" required />
         </div>
-        <button type="submit" class="btn btn-primary w-100">
-          Download Assignment
-        </button>
+        <button id="submitBtn" type="submit" class="btn btn-primary w-100">Download</button>
       </form>
-    </div>
+      
+      <div id="downloadSection" class="mt-4" style="display: none;">
+        <a href="/download_zip1" class="btn btn-success w-100 mb-2">Download Manual</a>
+        <a href="/download_zip2" class="btn btn-info w-100 mb-2">Download Code Only</a>
+        <button class="btn btn-secondary w-100" disabled>Download Output (Coming Soon)</button>
+      </div>
+      
+      
+  
+  <script>
+    document.getElementById('assignmentForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+  
+      const response = await fetch('/generate', {
+        method: 'POST',
+        body: formData
+      });
+  
+      const result = await response.json();
+      if (result.success) {
+        // Hide the form submit button
+        document.getElementById('submitBtn').style.display = 'none';
+  
+        // Show the download buttons
+        document.getElementById('downloadSection').style.display = 'block';
+      } else {
+        alert("Submission failed. Try again.");
+      }
+    });
+  </script>
+  
   </body>
 </html>
