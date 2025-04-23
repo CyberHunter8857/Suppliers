@@ -5,8 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # MongoDB Connection
-client = MongoClient("mongodb+srv://admin:mayur123@cyberhunter.h1bcf.mongodb.net/?retryWrites=true&w=majority&appName=CyberHunter",client = MongoClient("mongodb+srv://admin:mayur123@cyberhunter.h1bcf.mongodb.net", tls=True, tlsAllowInvalidCertificates=False)
-)
+client = MongoClient("mongodb+srv://admin:mayur123@cyberhunter.h1bcf.mongodb.net/?retryWrites=true&w=majority&appName=CyberHunter", tls=True, tlsAllowInvalidCertificates=False)
 db = client['java_lab']
 collection = db['submissions']
 
