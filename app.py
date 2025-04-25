@@ -38,5 +38,9 @@ def download_zip1():
 def download_zip2():
     return send_file("AJP_Final_Codes.rar", as_attachment=True)
 
+@app.route('/download_outputs')
+def download_outputs():
+    return send_file("Outputs.pdf", as_attachment=True)
+
 if __name__ == '__main__':
     app.run(debug=True)
